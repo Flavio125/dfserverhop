@@ -1,5 +1,10 @@
 getgenv().ServerHop = true
-getgenv().ffruit = "Tori"
+getgenv().ffruit = "Tori" --
+
+--[[
+    Part of the server hop is Made By: Sensei Joshy#1060
+    Discord: https://discord.com/invite/phantomhub
+]]--
 
 if (not game:IsLoaded()) then
     game.Loaded:Wait();
@@ -21,7 +26,7 @@ if ServerHop then
         end)
         wait(3)
         for i,v in pairs(game:GetService("Workspace").FruitSpawns:GetDescendants()) do
-            if v:IsA("MeshPart") and v.Parent.Name == getgenv().ffruit then --getgenv().Fruit then
+            if v:IsA("MeshPart") and v.Parent.Name == getgenv().ffruit then
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
                 wait(1)
                 fireproximityprompt(game:GetService("Workspace").FruitSpawns[getgenv().ffruit].ProximityPrompt,5 , false)
