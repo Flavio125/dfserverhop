@@ -1,3 +1,6 @@
+getgenv().ServerHop = true
+getgenv().ffruit = "Tori"
+
 if (not game:IsLoaded()) then
     game.Loaded:Wait();
 end;
@@ -10,18 +13,21 @@ function teleport()
     end
 end
 if ServerHop then
-    while wait(40) do
+    print("Starting")
+    while wait(5) do
+    
         pcall(function()
             game:GetService("ReplicatedStorage").Remotes.StartUp:InvokeServer()
         end)
-        wait(5)
+        wait(3)
         for i,v in pairs(game:GetService("Workspace").FruitSpawns:GetDescendants()) do
-            if v:IsA("MeshPart") and v.Parent.Name == "Tori" then --getgenv().Fruit then
+            if v:IsA("MeshPart") and v.Parent.Name == getgenv().ffruit then --getgenv().Fruit then
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
                 wait(1)
-                fireproximityprompt(game:GetService("Workspace").FruitSpawns.Tori.ProximityPrompt,5 , false)
+                fireproximityprompt(game:GetService("Workspace").FruitSpawns[getgenv().ffruit].ProximityPrompt,5 , false)
             end
         end
+        print("changin server")
         wait(1)
         repeat wait()
             teleport()
