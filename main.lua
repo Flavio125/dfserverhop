@@ -23,7 +23,7 @@ if ServerHop then
         wait(5)
         syn.queue_on_teleport(
             getgenv().ServerHop = true 
-            loadstring(game:HttpGet(""))()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/Flavio125/dfserverhop/main/main.lua"))()
         )
         repeat wait()
             teleport()
