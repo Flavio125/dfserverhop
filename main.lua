@@ -22,11 +22,7 @@ if ServerHop then
                 fireproximityprompt(game:GetService("Workspace").FruitSpawns.Tori.ProximityPrompt,5 , false)
             end
         end
-        wait(5)
-        syn.queue_on_teleport(
-            getgenv().ServerHop = true
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/Flavio125/dfserverhop/main/main.lua"))()
-        )
+        wait(1)
         repeat wait()
             teleport()
         until not ServerHop
